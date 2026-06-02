@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.AhmeedGamil/semhood",
+  "title": "semhood",
+  "description": "AST-based semantic code search; results ship with their call graph (calls + callers).",
+  "repository": {
+    "url": "https://github.com/ahmeedgamil/semhood",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "semhood",
+      "version": "0.1.0",
+      "runtimeHint": "uvx",
+      "runtimeArguments": [
+        { "type": "named", "name": "--from", "value": "semhood" },
+        { "type": "positional", "value": "semhood-mcp" }
+      ],
+      "transport": { "type": "stdio" }
+    }
+  ]
+}

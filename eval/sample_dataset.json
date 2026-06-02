@@ -1,0 +1,20 @@
+[
+    {
+        "question": "How does the AST extractor chunk PHP files?",
+        "ground_truth": "The AstExtractor uses PHP-Parser to parse PHP files into an AST, then walks the tree extracting one chunk per class, method, or standalone function. Each chunk contains the name, class, namespace, parameters, return type, docblock, source code, visibility, calls made, and line range.",
+        "expected_sources": ["AstExtractor::extract"],
+        "requester_type": "developer"
+    },
+    {
+        "question": "What happens during graph expansion at query time?",
+        "ground_truth": "After reranking, expandGraph collects called_by entries and internal call targets from each retrieved chunk, resolves them to Qdrant point IDs via NameIndex (single Redis HMGET), fetches their payloads from Qdrant, and appends them as neighbor chunks marked with is_neighbor=true.",
+        "expected_sources": ["QueryPipeline::expandGraph", "NameIndex::resolveMany"],
+        "requester_type": "developer"
+    },
+    {
+        "question": "How does the system decide which search results to show?",
+        "ground_truth": "The system searches across three dense vectors (description, dev_questions, user_questions) and a BM25 sparse index, merges results using Reciprocal Rank Fusion, then reranks the top 20 candidates down to 8 using Cohere's rerank model.",
+        "expected_sources": ["QueryPipeline::query", "QueryPipeline::reciprocalRankFusion"],
+        "requester_type": "user"
+    }
+]

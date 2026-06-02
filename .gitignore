@@ -1,0 +1,64 @@
+﻿# --- Environment / secrets ---
+.env
+.env.local
+.env.semhood
+
+# --- Local tooling binaries ---
+mcp-publisher.exe
+mcp-publisher
+
+# --- Python build / package artifacts ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+build/
+dist/
+wheels/
+.eggs/
+MANIFEST
+
+# --- Virtual envs ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Tooling caches ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# --- IDEs / editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS noise ---
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
+
+# --- Local data (Qdrant on-disk index, etc.) ---
+qdrant_data/
+chroma_data/
+
+# --- Kiro / Claude / agent state ---
+.claude/
+.kiro/
+
+# --- Local-only docs (not for git) ---
+DEFERRED_WORK.md
+
+# --- Sample/demo project (not part of the package) ---
+sample_project/
+library_app/
