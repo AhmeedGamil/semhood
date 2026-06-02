@@ -10,7 +10,7 @@
 
 # semhood
 
-**AST-based, local-first semantic code search for AI agents — find code by meaning, not grep.**
+**Stop grepping.** Find the exact code your AI agent needs by intent, not keywords. semhood is an AST-aware semantic code search engine that retrieves code by what it does, complete with call-graph context and optional LLM enrichment.
 
 *Runs fully offline with zero API keys. Optional LLM enrichment adds a logic summary and developer queries to each chunk that you commit once and share — and every result ships with its call graph (what it calls + what calls it).*
 
@@ -45,8 +45,6 @@
 
                                 Search via CLI, HTTP, or MCP.
 ```
-
-**Stop grepping.** Find the exact code your AI agent needs by intent, not keywords. semhood is an AST-aware semantic code search engine that retrieves code by what it does, complete with call-graph context and optional LLM enrichment.
 
 semhood indexes your codebase the way a developer thinks about it: every function, method, and class becomes a chunk, with its call graph, docstring, and signature attached. You search by intent (*"how do we retry transient payment failures?"*) and get back the few chunks that actually answer the question.
 
