@@ -12,7 +12,7 @@
 
 **Stop grepping.** Find the exact code your AI agent needs by intent, not keywords. semhood is an AST-aware semantic code search engine that retrieves code by what it does, complete with call-graph context and optional LLM enrichment.
 
-*Runs fully offline with zero API keys. Optional LLM enrichment adds a logic summary and developer queries to each chunk that you commit once and share — and every result ships with its call graph (what it calls + what calls it).*
+*Runs fully offline with zero API keys — or plug in cloud embeddings — Voyage's code-specialized models, or OpenAI's strong general-purpose (natural-language) embeddings — for higher-quality retrieval. Optional LLM enrichment adds a logic summary and developer queries to each chunk that you commit once and share — and every result ships with its call graph (what it calls + what calls it).*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/ahmeedgamil/semhood/ci.yml?branch=main&logo=github)](https://github.com/ahmeedgamil/semhood/actions)
@@ -418,9 +418,12 @@ or the real environment. Indexes are stored centrally under
 
 ```yaml
 embeddings:
-  provider: "local"
+  provider: "local"            # local | voyage | openai | cohere
   local:
     model: "sentence-transformers/all-mpnet-base-v2"
+  # voyage:                    # code-tuned, no local load — needs an API key
+  #   api_key: "${VOYAGE_API_KEY}"
+  #   model: "voyage-code-2"
 
 llm:
   provider: "anthropic"
